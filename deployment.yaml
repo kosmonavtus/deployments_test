@@ -47,9 +47,6 @@ spec:
         app.kubernetes.io/version: "1.0.0"
         app.kubernetes.io/managed-by: Helm
     spec:
-      serviceAccountName: release-name-devault-chart
-      securityContext:
-        {}
       containers:
         - name: devault-chart
           securityContext:
