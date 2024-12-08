@@ -61,11 +61,10 @@ spec:
         - name: devault-chart
           securityContext:
             capabilities:
-              drop:
-              - ALL
-              readOnlyRootFilesystem: true
-              runAsNonRoot: true
+              add:
+                - NET_BIND_SERVICE  # Это разрешит привилегию привязки к порту ниже 1024
               runAsUser: 1000
+              allowPrivilegeEscalation: true
           image: "docker.io/amdarkentheblack/echo-http-v1.9.0:latest"
           imagePullPolicy: IfNotPresent
           ports:
